@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.B. Baba Ceiling Works</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            text-align: center;
+            padding-bottom: 100px;
+        }
+        header {
+            background-color: #0b3c5d;
+            color: white;
+            padding: 25px 15px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            color: #ffcc00;
+        }
+        .contact-box {
+            background-color: #1d2731;
+            color: white;
+            padding: 18px;
+            font-size: 16px;
+            line-height: 1.6;
+            border-bottom: 4px solid #ffcc00;
+        }
+        .contact-box a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 25px auto;
+            background: white;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            text-align: left;
+        }
+        .container h2 {
+            text-align: center;
+            color: #0b3c5d;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0b3c5d;
+            padding-bottom: 10px;
+        }
+        .upload-section {
+            margin: 20px 0;
+            padding: 25px;
+            border: 3px dashed #27ae60;
+            border-radius: 10px;
+            background: #eafaf1;
+            text-align: center;
+        }
+        .upload-section h3 {
+            margin-top: 0;
+            color: #27ae60;
+            font-size: 20px;
+        }
+        .file-input-wrapper {
+            margin: 15px 0;
+        }
+        .file-input-wrapper input[type="file"] {
+            padding: 10px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            width: 80%;
+            max-width: 400px;
+        }
+        .upload-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .upload-btn:hover {
+            background: #219653;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .gallery-item {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+        .delete-btn {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .delete-btn:hover {
+            background: #cc0000;
+        }
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            overflow: hidden;
+            text-align: left;
+            z-index: 1000;
+            border: 1px solid #0b3c5d;
+        }
+        .chat-header {
+            background: #0b3c5d;
+            color: white;
+            padding: 14px;
+            font-weight: bold;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .chat-body {
+            height: 220px;
+            overflow-y: auto;
+            padding: 12px;
+            background: #f9f9f9;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .chat-message {
+            padding: 9px 13px;
+            border-radius: 8px;
+            max-width: 85%;
+            line-height: 1.4;
+        }
+        .bot-msg {
+            background: #e2e8f0;
+            color: #333;
+            align-self: flex-start;
+        }
+        .user-msg {
+            background: #0b3c5d;
+            color: white;
+            align-self: flex-end;
+        }
+        .chat-footer {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+        .chat-footer input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+        .chat-footer button {
+            background: #0b3c5d;
+            color: white;
+            border: none;
+            padding: 0 16px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>J.B. BABA Ceiling Works</h1>
+        <p>Plaster of Paris & Gypsum Works</p>
+    </header>
+
+    <div class="contact-box">
+        <p><strong>Pro:</strong> Sufiyan Shaikh</p>
+        <p><strong>Mobile:</strong> <a href="tel:8446701719">8446701719</a>, <a href="tel:7420002029">7420002029</a></p>
+        <p><strong>Address:</strong> National Nagar, Aurangabad Road, Jalna, Maharashtra</p>
+    </div>
+
+    <div class="container">
+        <h2>Photo Gallery & Upload Manager</h2>
+        
+        <div class="upload-section">
+            <h3>🖼️ Nayi Ceiling Photo Upload Karein</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 15px;">Apne phone ya computer se photo chunein aur upload button dabayein:</p>
+            <div class="file-input-wrapper">
+                <input type="file" id="imageInput" accept="image/*" multiple>
+            </div>
+            <button class="upload-btn" onclick="uploadImages()">📸 Photo Upload Karein</button>
+        </div>
+
+        <h3 style="color: #0b3c5d; margin-top: 30px;">Uploaded Photos Gallery:</h3>
+        <div class="gallery" id="imageGallery"></div>
+    </div>
+
+    <div class="chat-widget">
+        <div class="chat-header">
+            <span>🤖</span> J.B. Baba AI Assistant
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot-msg">Namaste! Main J.B. Baba Ceiling Works ka AI Assistant hoon. Aapko address, contact ya kaam ke baare mein kya janna hai?</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Yahan sawal likhein..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Bhejein</button>
+        </div>
+    </div>
+
+    <script>
+        function uploadImages() {
+            const input = document.getElementById('imageInput');
+            const gallery = document.getElementById('imageGallery');
+
+            if (input.files.length === 0) {
+                alert("Kripya pehle 'Choose File' par click karke koi photo select karein!");
+                return;
+            }
+
+            for (let i = 0; i < input.files.length; i++) {
+                const file = input.files[i];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'gallery-item';
+
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.className = 'delete-btn';
+                    deleteBtn.innerText = '🗑️ Delete Photo';
+                    deleteBtn.onclick = function() {
+                        gallery.removeChild(itemDiv);
+                    };
+
+                    itemDiv.appendChild(img);
+                    itemDiv.appendChild(deleteBtn);
+                    gallery.appendChild(itemDiv);
+                }
+
+                reader.readAsDataURL(file);
+            }
+            input.value = ''; 
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const inputField = document.getElementById('userInput');
+            const text = inputField.value.trim();
+            if (text === '') return;
+
+            appendMessage(text, 'user-msg');
+            inputField.value = '';
+
+            setTimeout(() => {
+                getAIResponse(text);
+            }, 500);
+        }
+
+        function appendMessage(text, className) {
+            const chatBody = document.getElementById('chatBody');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `chat-message ${className}`;
+            msgDiv.innerText = text;
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function getAIResponse(userText) {
+            let query = userText.toLowerCase();
+            let reply = "Aap is baare mein zyada jaankari ke liye humein seedhe call kar sakte hain: 8446701719 par.";
+
+            if (query.includes('address') || query.includes('pata') || query.includes('kahan') || query.includes('jalna') || query.includes('nagar') || query.includes('maharashtra')) {
+                reply = "Hamari shop ka address hai: National Nagar, Aurangabad Road, Jalna, Maharashtra.";
+            } else if (query.includes('number') || query.includes('contact') || query.includes('phone') || query.includes('call') || query.includes('sufiyan')) {
+                reply = "Aap Sufiyan Shaikh ji se in numbers par contact kar sakte hain: 8446701719, 7420002029.";
+            } else if (query.includes('pop') || query.includes('ceiling') || query.includes('gypsum') || query.includes('design') || query.includes('kaam') || query.includes('plaster')) {
+                reply = "Hum Plaster of Paris (POP) aur Gypsum Ceiling Works ka behtareen kaam karte hain. Aap website par green box se photos upload karke apne designs dikha sakte hain!";
+            } else if (query.includes('hello') || query.includes('hi') || query.includes('namaste')) {
+                reply = "Namaste! J.B. Baba Ceiling Works mein aapka swagat hai. Aaj hum aapki kya seva kar sakte hain?";
+            }
+
+            appendMessage(reply, 'bot-msg');
+        }
+    </script>
+
+</body>
+</html>
